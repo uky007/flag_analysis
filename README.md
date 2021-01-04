@@ -28,20 +28,20 @@
     - youtube_apikey.txt
     - $(date "+%Y-%m-%d")_flag_videos_info.json
     - videoIds.txt
-- 役割
+    - 役割
 指定したチャンネルid にアップロードされている動画のid 情報等をすべて取得し，$(date "+%Y-%m-%d")_flag_videos_info.json に出力する
 また，動画id は別途videoIds.txt に出力している．
 情報へのアクセスには，YouTube Data API v3 のsearch メソッドを使用している．
     
 - flag_get_channel_info.sh
     - $(date "+%Y-%m-%d")_flag_channels_info.json
-- 役割
+    - 役割
 指定したチャンネルid に関する情報をすべて取得し，$(date "+%Y-%m-%d")_flag_channels_info.json に出力する
 情報へのアクセスには，YouTube Data API v3 のchannels メソッドを使用しており，チャンネル登録者数や再生回数の合計といった情報が取得できる．
     
 - flag_videos_stats.sh
     - $(date "+%Y-%m-%d")_flag_videos_stats.json
-- 役割
+    - 役割
 videoIds.txt に記載された動画id の動画に関する情報をすべて取得し，$(date "+%Y-%m-%d")_flag_videos_stats.json に出力する．
 情報へのアクセスには，YouTube Data API v3 のvideos メソッドを使用しており，動画タイトル，公開日や再生回数，Like，DisLikeやコメント数といった情報が取得できる．
     
@@ -50,7 +50,7 @@ videoIds.txt に記載された動画id の動画に関する情報をすべて�
     - $(date "+%Y-%m-%d")_flag_videos_datasets.csv
     - flag_merge_csv.py
         - flag_encount.csv
-- 役割
+    - 役割
 $(date "+%Y-%m-%d")_flag_videos_stats.json の情報をもとに，グラフ化用のデータセット $(date "+%Y-%m-%d")_flag_videos_stats.csvを作成する．
 そして，$(date "+%Y-%m-%d")_flag_videos_stats_graph.png とflag_encount.csv (Dead End，死亡フラグ，生存フラグ，恋愛フラグのカウント数を記録したファイル)を連結して，
 グラフ作成用のもととなるデータセット $(date "+%Y-%m-%d")_flag_videos_datasets.csv を出力する．
@@ -58,11 +58,11 @@ $(date "+%Y-%m-%d")_flag_videos_stats.json の情報をもとに，グラフ化�
 - flag_plot_graph.sh
     - $(date "+%Y-%m-%d")_flag_videos_stats_graph.png
     - flag_videos_stats_plot.py
-- 役割
+    - 役割
 $(date "+%Y-%m-%d")_flag_videos_datasets.csv の情報をもとに，動画情報の可視化として$(date "+%Y-%m-%d")_flag_videos_stats_graph.png を出力する．
 
 - flag_get_thumbnail.sh
-- 役割
+    - 役割
 $(date "+%Y-%m-%d")_flag_videos_stats.json の情報をもとに，各動画に存在するサムネイル画像をすべて取得する
 サムネイル画像は以下のように4種類サイズが存在する．動画によっては一部ないものが存在する．
     - default (120 x 90)
@@ -77,7 +77,7 @@ $(date "+%Y-%m-%d")_flag_videos_stats.json の情報をもとに，各動画に�
 - フラグちゃんのTwitter https://twitter.com/flag__chan
 - 株式会社Plott / Plott Inc. https://plott.tokyo/#top
 
-====================================================================================
+============================================================================
 # Project name: flag_analysis
 
 ## Overview.
@@ -107,20 +107,20 @@ It is assumed that the program is executed once a day unless the generated files
     - youtube_apikey.txt
     - $(date "+%Y-%m-%d")_flag_videos_info.json
     - videoIds.txt
-- Role
+    - Role
 Obtain all the id information, etc. of the videos uploaded to the specified channel id, and output it to $(date "+%Y-%m-%d")_flag_videos_info.json
 The video ids are also output separately in videoIds.txt.
 To access the information, the search method of YouTube Data API v3 is used.
     
 - flag_get_channel_info.sh
     - $(date "+%Y-%m-%d")_flag_channels_info.json
-- Role
+    - Role
 Get all information about the specified channel id and output it to $(date "+%Y-%m-%d")_flag_channels_info.json
 The information is accessed using the channels method of the YouTube Data API v3, which provides information such as the number of channel subscribers and the total number of views.
     
 - flag_videos_stats.sh
     - $(date "+%Y-%m-%d")_flag_videos_stats.json
-- Role
+    - Role
 Retrieves all information about the video with the video id listed in videoIds.txt, and outputs it to $(date "+%Y-%m-%d")_flag_videos_stats.json.
 The videos method of the YouTube Data API v3 is used to access the information, which includes the video title, date of publication, number of views, likes, dislikes, and comments.
     
@@ -129,7 +129,7 @@ The videos method of the YouTube Data API v3 is used to access the information, 
     - $(date "+%Y-%m-%d")_flag_videos_datasets.csv
     - flag_merge_csv.py
         - flag_encount.csv
-- Role
+    - Role
 Create a dataset $(date "+%Y-%m-%d")_flag_videos_stats.csv for graphing based on the information in $(date "+%Y-%m-%d")_flag_videos_stats.json.
 Then, concatenate $(date "+%Y-%m-%d")_flag_videos_stats_graph.png and flag_encount.csv (a file containing the counts of Dead End, Death Flag, Survival Flag, and Love Flag) to create a graph.
 Output the dataset $(date "+%Y-%m-%d")_flag_videos_datasets.csv as the basis for creating the graph.
@@ -137,11 +137,11 @@ Output the dataset $(date "+%Y-%m-%d")_flag_videos_datasets.csv as the basis for
 - flag_plot_graph.sh
     - $(date "+%Y-%m-%d")_flag_videos_stats_graph.png
     - flag_videos_stats_plot.py
-- Role
+    - Role
 Output $(date "+%Y-%m-%d")_flag_videos_stats_graph.png as a visualization of video information based on the information in $(date "+%Y-%m-%d")_flag_videos_datasets.csv.
 
 - flag_get_thumbnail.sh
-- Role
+    - Role
 Retrieves all thumbnail images for each video based on the information in $(date "+%Y-%m-%d")_flag_videos_stats.json
 Thumbnail images come in four sizes, as shown below. Some videos may not have any of these.
     - default (120 x 90)
