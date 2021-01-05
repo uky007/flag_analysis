@@ -71,6 +71,15 @@ $(date "+%Y-%m-%d")_flag_videos_stats.json の情報をもとに，各動画に�
     - standard (640 x 480)
     - maxres (1280 x 720)
     
+- flag_channel_statistics.sh
+    - channel_statistics.csv
+    - 役割
+$(date "+%Y-%m-%d")_flag_channels_info.json から再生回数の合計とチャンネル登録者数の情報を抽出し，
+日付ごとに channel_statistics.csv に日付とともに追記する．
+
+- file_move.sh
+昨日の日付のデータおよびグラフを所定のディレクトリに移動する．
+    
 
 ## 関連リンク
 - 全力回避フラグちゃん! https://www.youtube.com/channel/UCo_nZN5yB0rmfoPBVjYRMmw/videos
@@ -149,6 +158,15 @@ Thumbnail images come in four sizes, as shown below. Some videos may not have an
     - high (480 x 360)
     - standard (640 x 480)
     - maxres (1280 x 720)
+    
+- flag_channel_statistics.sh
+    - channel_statistics.csv
+    - Role
+Extracts the total number of views and the number of subscribers from $(date "+%Y-%m-%d")_flag_channels_info.json, and appends them to channel_statistics.csv with the date.
+Add the information to channel_statistics.csv with the date.
+
+- file_move.sh
+Moves the data and graphs of yesterday's date to the specified directory.
 
 ## Related links
 - Avoid flags at all costs! https://www.youtube.com/channel/UCo_nZN5yB0rmfoPBVjYRMmw/videos
