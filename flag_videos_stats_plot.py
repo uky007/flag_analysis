@@ -86,8 +86,10 @@ for i in range(len(x)):
 ## 平均値と中央値を横線でプロット
 avg = plt.hlines(num_play.mean(axis=0), x[0], x[len(x) - 1], 'b', linestyles='dashed')
 med = plt.hlines(num_play.median(axis=0), x[0], x[len(x) - 1], 'r', linestyles='dashed')
-print(num_play.mean(axis=0))
-print(num_play.median(axis=0))
+print("Max of viewCount:" + str(max(y1)))
+print("Min of viewCount:" + str(min(y1)))
+print("Average of viewCount:" + str(num_play.mean(axis=0)))
+print("Median of viewCount:" + str(num_play.median(axis=0)))
         
 # 軸の範囲
 plt.xlim('2019-11-01', x[len(x) - 1])

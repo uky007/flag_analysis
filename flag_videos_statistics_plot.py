@@ -78,6 +78,8 @@ ax2.set_ylim([0, 30000])
 # max(like), avg(like)
 print("Max like count:" + str(max(y2)))
 print("Average like count:" + str(num_like.mean(axis=0)))
+print("Max comment count:" + str(max(y4)))
+print("Average comment count:" + str(num_comment.mean(axis=0)))
 
 # グラフタイトル
 ax1.set_title("全力回避フラグちゃん! 再生回数と評価数", fontname="TakaoPGothic", fontsize=20)
