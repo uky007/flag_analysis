@@ -8,4 +8,5 @@ ${path}/flag_gen_datasets.sh
 ${path}/flag_plot_graph.sh
 ${path}/flag_get_thumbnail.sh
 ${path}/flag_channel_statistics.sh
+python3 ${path}/flag_channel_statistics_plot.py
 ${path}/file_move.sh
