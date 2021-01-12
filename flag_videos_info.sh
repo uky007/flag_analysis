@@ -17,7 +17,7 @@ if [ $? != 0 ]; then
     echo "An Error occurred."
     exit
 fi
-totalResults=$(cat ${output_file} | jq -r '.pageInfo.totalResults')
+totalResults=$(curl -s "https://www.googleapis.com/youtube/v3/channels?id=UCo_nZN5yB0rmfoPBVjYRMmw&key=$(cat youtube_apikey.txt)&part=snippet,contentDetails,status,statistics,brandingSettings" | jq -r '.items[].statistics.videoCount')
 pageToken=$(cat ${output_file} | jq -r '.nextPageToken')
 
 echo $totalResults
