@@ -14,4 +14,5 @@ mkdir $path/datasets
 mkdir -p $path/thumbnail/default
 mkdir -p $path/thumbnail/medium
 mkdir -p $path/thumbnail/high
+mkdir -p $path/thumbnail/standard
 mkdir -p $path/thumbnail/maxres
