@@ -58,6 +58,9 @@ for i in range(len(num_play)):
     vn.append((y1[i] - min(y1)) / (max(y1) - min(y1)))
     ln.append((y2[i] - min(y2)) / (max(y2) - min(y2)))
     score.append(vn[i] * ln[i] * 100)
+
+df = pd.DataFrame(score)
+df.to_csv("flag_videos_score.csv", header=False, index=False)
 ##########################################
 
 
