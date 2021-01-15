@@ -58,7 +58,7 @@ subscribers, = ax2.plot(x, y2, color='k')
         
 # 軸の範囲
 ax1.set_xlim('2021-01-04', x[len(x) - 1])
-ax1.set_ylim([0,  180000000])
+ax1.set_ylim([0,  200000000])
 ax2.set_ylim([400000, 500000])
 
 # グラフタイトル

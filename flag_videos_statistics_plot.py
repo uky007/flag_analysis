@@ -92,6 +92,7 @@ ax1.set_ylim([0, 3500000])
 ax2.set_ylim([0, 30000])
 
 # max(like), avg(like)
+print("Sum of likeCount:" + str(sum(y2)))
 print("Max likeCount:" + str(max(y2)))
 print("Average likeCount:" + str(num_like.mean(axis=0)))
 print("Median likeCount:" + str(num_like.median(axis=0)))
