@@ -69,6 +69,7 @@ plt.ylabel("動画数", fontname="TakaoPGothic", fontsize=20)
 
 ## 平均値と中央値を横線でプロット
 avg = plt.vlines(num_play.mean(axis=0), 0, maxy, 'b', linestyles='dashed')
+med = plt.vlines(num_play.median(axis=0), 0, maxy, 'r', linestyles='dashed')
 
 # 凡例
 #play_title = "再生回数"
@@ -77,9 +78,9 @@ avg = plt.vlines(num_play.mean(axis=0), 0, maxy, 'b', linestyles='dashed')
 #seizon_title = "生存フラグ"
 #renai_title = "恋愛フラグ"
 avg_title = "平均値"
-#med_title = "中央値"
+med_title = "中央値"
 
-plt.legend([avg], [avg_title], bbox_to_anchor=(1.0, 1.0), prop={"family":"TakaoPGothic", 'size':20}, markerscale=3)
+plt.legend([avg, med], [avg_title, med_title], bbox_to_anchor=(1.0, 1.0), prop={"family":"TakaoPGothic", 'size':20}, markerscale=3)
 
 #画像保存
 plt.savefig(output_file, bbox_inches="tight", pad_inches=0.0)

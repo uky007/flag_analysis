@@ -19,8 +19,10 @@ flag_header = ["vid", "title", "date", "description", "viewCount", "likeCount", 
 output_file = sys.argv[2]
 
 #read csv
-datasets = pd.read_csv(datasets_file, header=None, encoding='UTF8')
-score = pd.read_csv(score_file, header=None, encoding='UTF8')
+datasets = pd.read_csv(datasets_file, header=0, index_col=0, encoding='UTF8')
+print(datasets)
+score = pd.read_csv(score_file, header=None, index_col=0, encoding='UTF8')
+print(score)
 concat_csv = pd.concat([datasets, score], axis=1)
 #concat_csv.to_csv(output_file, header=True, index=True)
 
