@@ -60,7 +60,8 @@ for i in range(len(num_play)):
     score.append(vn[i] * ln[i] * 100)
 
 df = pd.DataFrame(score)
-df.to_csv("flag_videos_score.csv", header=False, index=False)
+df.index = np.arange(1, len(df) + 1)
+df.to_csv("flag_videos_score.csv", header=False, index=True)
 ##########################################
 
 
