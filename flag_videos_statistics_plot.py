@@ -86,6 +86,15 @@ ax2 = ax1.twinx()
 like, = ax2.plot(x, y2, color='r')
 dislike, = ax2.plot(x, y3, color='b')
 comment, = ax2.plot(x, y4, color='k')
+
+##### Story #################################################################################
+s1, = ax2.plot(x[59], y2[59], marker='*', markersize=20, color='#ff7f00', linestyle='None')
+s2, = ax2.plot(x[74], y2[74], marker='*', markersize=20, color='#ff7f00', linestyle='None')
+s3, = ax2.plot(x[95], y2[95], marker='*', markersize=20, color='#ff7f00', linestyle='None')
+s4, = ax2.plot(x[125], y2[125], marker='*', markersize=20, color='#ff7f00', linestyle='None')
+s5, = ax2.plot(x[195], y2[195], marker='*', markersize=20, color='#ff7f00', linestyle='None')
+s6, = ax2.plot(x[228], y2[228], marker='*', markersize=20, color='#ff7f00', linestyle='None')
+##############################################################################################
         
 # 軸の範囲
 ax1.set_xlim('2019-11-01', x[len(x) - 1])
