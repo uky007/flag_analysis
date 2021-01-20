@@ -15,7 +15,7 @@ videos_stats_file = sys.argv[1]
 flag_encount_file = "flag_encount.csv"
 flag_header_file = "flag_header.csv"
 
-flag_header = ["vid", "title", "date", "description", "viewCount", "likeCount", "dislikeCount", "commentCount", "DeadEndCount", "shibouflagCount", "seizonflagCount", "renaiflagCount"]
+flag_header = ["vid", "title", "date", "description", "viewCount", "likeCount", "dislikeCount", "commentCount", "DeadEndCount", "shibouflagCount", "seizonflagCount", "renaiflagCount", "videoTime",]
 
 output_file = sys.argv[2]
 
