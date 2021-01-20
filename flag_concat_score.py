@@ -14,7 +14,7 @@ from pandas.plotting import register_matplotlib_converters
 datasets_file = sys.argv[1]
 score_file = "flag_videos_score.csv"
 
-flag_header = ["vid", "title", "date", "description", "viewCount", "likeCount", "dislikeCount", "commentCount", "DeadEndCount", "shibouflagCount", "seizonflagCount", "renaiflagCount", "videoTime", "score"]
+flag_header = ["vid", "title", "date", "description", "viewCount", "likeCount", "dislikeCount", "commentCount", "videoTime", "DeadEndCount", "shibouflagCount", "seizonflagCount", "renaiflagCount", "score"]
 
 output_file = sys.argv[2]
 

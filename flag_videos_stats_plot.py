@@ -21,16 +21,16 @@ output = sys.argv[2]
 num_play = pd.read_csv(file, header=0, encoding='UTF8', usecols=[3, 5], parse_dates=[0])
 num_play = num_play.dropna(how='all')
 #Date, Dead End
-num_dead = pd.read_csv(file, header=0, encoding='UTF8', usecols=[3, 9], parse_dates=[0])
+num_dead = pd.read_csv(file, header=0, encoding='UTF8', usecols=[3, 10], parse_dates=[0])
 num_dead = num_dead.dropna(how='all')
 #Date, 死亡フラグ
-num_shibou = pd.read_csv(file, header=0, encoding='UTF8', usecols=[3, 10], parse_dates=[0])
+num_shibou = pd.read_csv(file, header=0, encoding='UTF8', usecols=[3, 11], parse_dates=[0])
 num_shibou = num_shibou.dropna(how='all')
 #Date, 生存フラグ
 num_seizon = pd.read_csv(file, header=0, encoding='UTF8', usecols=[3, 11], parse_dates=[0])
 num_seizon = num_seizon.dropna(how='all')
 #Date, 恋愛フラグ
-num_renai = pd.read_csv(file, header=0, encoding='UTF8', usecols=[3, 12], parse_dates=[0])
+num_renai = pd.read_csv(file, header=0, encoding='UTF8', usecols=[3, 13], parse_dates=[0])
 num_renai = num_renai.dropna(how='all')
 
 # debug
@@ -82,7 +82,6 @@ for i in range(len(x)):
     if y5[i] == 1:
         renai, = plt.plot(x[i], y1[i], marker='$\heartsuit$', markersize=3, color='#f781bf', linestyle='None')
 
-
 ## 平均値と中央値を横線でプロット
 avg = plt.hlines(num_play.mean(axis=0), x[0], x[len(x) - 1], 'b', linestyles='dashed')
 med = plt.hlines(num_play.median(axis=0), x[0], x[len(x) - 1], 'r', linestyles='dashed')
@@ -115,7 +114,7 @@ renai_title = "恋愛フラグ"
 avg_title = "平均値"
 med_title = "中央値"
 
-plt.legend([play, dead, shibou, seizon, renai, avg, med], [play_title, dead_title, shibou_title, seizon_title, renai_title, avg_title, med_title], bbox_to_anchor=(1.0, 1.0), prop={"family":"TakaoPGothic", 'size':20}, markerscale=3)
+plt.legend([play, dead, shibou, seizon, renai, avg, med], [play_title, dead_title, shibou_title, seizon_title, renai_title, avg_title, med_title], bbox_to_anchor=(1.0, 1.0), prop={"family":"TakaoPGothic", 'size':20}, markerscale=1)
 
 #画像保存
 plt.savefig(output, bbox_inches="tight", pad_inches=0.0)
