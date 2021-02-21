@@ -81,6 +81,8 @@ ax1 = fig.add_subplot()
 ## 再生回数を棒グラフでプロット
 play = ax1.bar(x, y1, width=1.0, bottom=None, color="lightblue")
 
+
+
 ## Like, Dislike, Commnetを折れ線でプロット
 ax2 = ax1.twinx()
 like, = ax2.plot(x, y2, color='r')
@@ -94,12 +96,13 @@ s3, = ax2.plot(x[95], y2[95], marker='*', markersize=20, color='#ff7f00', linest
 s4, = ax2.plot(x[125], y2[125], marker='*', markersize=20, color='#ff7f00', linestyle='None')
 s5, = ax2.plot(x[195], y2[195], marker='*', markersize=20, color='#ff7f00', linestyle='None')
 s6, = ax2.plot(x[228], y2[228], marker='*', markersize=20, color='#ff7f00', linestyle='None')
+ss1, = ax2.plot(x[247], y2[247], marker='*', markersize=20, color='b', linestyle='None')
 ##############################################################################################
         
 # 軸の範囲
 ax1.set_xlim('2019-11-01', x[len(x) - 1])
 ax1.set_ylim([0, 3500000])
-ax2.set_ylim([0, 30000])
+ax2.set_ylim([0, 32000])
 
 # max(like), avg(like)
 print("Sum of likeCount:" + str(sum(y2)))
@@ -128,8 +131,10 @@ play_title = "再生回数"
 like_title = "高評価"
 dislike_title = "低評価"
 comment_title = "コメント"
+s_title = "ストーリー編"
+ss_title = "サブストーリー編"
 
-plt.legend([play, like, dislike, comment], [play_title, like_title, dislike_title, comment_title], bbox_to_anchor=(1.0, 1.0), prop={"family":"TakaoPGothic", 'size':20}, markerscale=3)
+plt.legend([play, like, dislike, comment, s1, ss1], [play_title, like_title, dislike_title, comment_title, s_title, ss_title], bbox_to_anchor=(0.7, 1.0), prop={"family":"TakaoPGothic", 'size':20}, markerscale=1)
 
 #画像保存
 plt.savefig(output_file, bbox_inches="tight", pad_inches=0.0)

@@ -39,6 +39,7 @@ do
         exit
     fi
     pageToken=$(curl -s ${api_url} | jq -r '.nextPageToken')
+    #echo ${pageToken}
 done
 
-cat ${output_file} | jq -r '.items[].id.videoId' | grep -v null > videoIds.txt
+sed -i "1i$(cat ${output_file} | jq -r '.items[].id.videoId' | grep -v null | head -1)" videoIds.txt
