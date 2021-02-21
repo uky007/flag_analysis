@@ -42,4 +42,8 @@ do
     #echo ${pageToken}
 done
 
-sed -i "1i$(cat ${output_file} | jq -r '.items[].id.videoId' | grep -v null | head -1)" videoIds.txt
+now=$(cat videoIds.txt | wc -l)
+
+if [ $now -lt $totalResults ]; then
+    sed -i "1i$(cat ${output_file} | jq -r '.items[].id.videoId' | grep -v null | head -1)" videoIds.txt
+fi
