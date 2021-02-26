@@ -97,6 +97,7 @@ s4, = ax2.plot(x[125], y2[125], marker='*', markersize=20, color='#ff7f00', line
 s5, = ax2.plot(x[195], y2[195], marker='*', markersize=20, color='#ff7f00', linestyle='None')
 s6, = ax2.plot(x[228], y2[228], marker='*', markersize=20, color='#ff7f00', linestyle='None')
 ss1, = ax2.plot(x[247], y2[247], marker='*', markersize=20, color='b', linestyle='None')
+ss2, = ax2.plot(x[251], y2[251], marker='*', markersize=20, color='b', linestyle='None')
 ##############################################################################################
         
 # 軸の範囲
