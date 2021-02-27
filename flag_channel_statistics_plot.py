@@ -58,7 +58,7 @@ subscribers, = ax2.plot(x, y2, color='k')
         
 # 軸の範囲
 ax1.set_xlim('2021-01-04', x[len(x) - 1])
-ax1.set_ylim([0,  200000000])
+ax1.set_ylim([0,  230000000])
 ax2.set_ylim([400000, 500000])
 
 # グラフタイトル
@@ -79,7 +79,7 @@ ax2.set_ylabel("チャンネル登録者数", fontname="TakaoPGothic", fontsize=
 view_title = "再生回数の合計"
 sub_title = "チャンネル登録者数"
 
-plt.legend([num_viewCount, subscribers], [view_title, sub_title], bbox_to_anchor=(1.0, 1.0), prop={"family":"TakaoPGothic", 'size':20}, markerscale=3)
+plt.legend([num_viewCount, subscribers], [view_title, sub_title], bbox_to_anchor=(0.2, 1.0), prop={"family":"TakaoPGothic", 'size':20}, markerscale=3)
 
 #画像保存
 plt.savefig("flag_channel_statistics_graph.png", bbox_inches="tight", pad_inches=0.0)
