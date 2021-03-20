@@ -48,6 +48,23 @@ y3 = num_dislike[num_dislike.columns[1]]
 #コメント
 y4 = num_comment[num_comment.columns[1]]
 
+
+#########################################
+#correlation coefficient
+res = y1.corr(y2)
+print("viewCount and likeCount corr: " + str(res))
+res = y1.corr(y3)
+print("viewCount and dislikeCount corr: " + str(res))
+res = y1.corr(y4)
+print("viewCount and commnetCount corr: " + str(res))
+res = y2.corr(y3)
+print("likeCount and dislikeCount corr: " + str(res))
+res = y2.corr(y4)
+print("likeCount and commentCount corr: " + str(res))
+res = y3.corr(y4)
+print("dislikeCount and commentCount corr: " + str(res))
+#########################################
+
 #########################################
 #Score
 vn = []
@@ -102,8 +119,8 @@ ss2, = ax2.plot(x[251], y2[251], marker='*', markersize=20, color='b', linestyle
         
 # 軸の範囲
 ax1.set_xlim('2019-11-01', x[len(x) - 1])
-ax1.set_ylim([0, 3500000])
-ax2.set_ylim([0, 32000])
+ax1.set_ylim([0, 3600000])
+ax2.set_ylim([0, 35000])
 
 # max(like), avg(like)
 print("Sum of likeCount:" + str(sum(y2)))
