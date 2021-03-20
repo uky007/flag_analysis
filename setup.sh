@@ -5,6 +5,7 @@ path=$(pwd)
 sudo apt update -y
 sudo apt install vim emacs nmap curl jq python3 python3-pip -y
 sudo apt install fonts-takao -y
+sudo apt install mariadb-server 
 pip3 install update
 pip3 install numpy pandas matplotlib
 pip3 install config requests_oauthlib twitter
