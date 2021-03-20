@@ -14,7 +14,7 @@ from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 
 bins = 15
-maxy = 90
+maxy = 60
 
 #データセット対象のCSV ファイル
 file = sys.argv[1]
@@ -22,7 +22,7 @@ output_file = sys.argv[2]
 #Date, 再生回数
 num_play = pd.read_csv(file, header=0, encoding='UTF8', usecols=[3, 5], parse_dates=[0])
 num_play = num_play.dropna(how='all')
-#Date, 再生時間
+#Date, 動画時間
 num_time = pd.read_csv(file, header=0, encoding='UTF8', usecols=[3, 9], parse_dates=[0])
 num_time = num_time.dropna(how='all')
 
@@ -33,11 +33,12 @@ x = num_play[num_play.columns[0]]
 
 #再生回数
 y1 = num_play[num_play.columns[1]]
-#再生時間
+#動画時間
 #y9 = num_time[num_time.columns[1]]
 
 seconds = []
 y9 = []
+y10 = []
 
 for i in range(len(x)):
     try:
@@ -46,7 +47,10 @@ for i in range(len(x)):
         dt = datetime.datetime.strptime(num_time[num_time.columns[1]][i], "PT%MM")
     
     y9.append(dt.time())
+    sec = dt.minute * 60 + dt.second
+    y10.append(sec)
 
+vt_seconds = pd.Series(y10)
 #フォント設定
 font_path = '/usr/share/fonts/truetype/takao-gothic/TakaoPGothic.ttf'
 font_prop = FontProperties(fname=font_path)
@@ -69,11 +73,9 @@ plt.title("全力回避フラグちゃん! 動画時間のヒストグラム", f
 
 # 軸メモリ
 
-## 平均値と中央値を横線でプロット
-avg = plt.hlines(num_time.mean(axis=0), x[0], x[len(x)-1], 'b', linestyles='dashed')
-med = plt.hlines(num_time.median(axis=0), x[0], x[len(x)-1], 'r', linestyles='dashed')
-#print("Average of viewCount:" + str(num_time.mean(axis=0)))
-#print("Median of viewCount:" + str(num_time.median(axis=0)))
+## 平均値と中央値を線でプロット
+avg = plt.vlines(vt_seconds.mean(axis=0), 0, maxy, 'b', linestyles='dashed')
+med = plt.vlines(vt_seconds.median(axis=0), 0, maxy, 'r', linestyles='dashed')
 
 # ラベル名
 plt.xlabel("動画時間", fontsize=20, fontname="TakaoPGothic")
@@ -83,7 +85,7 @@ plt.ylabel("動画数", fontname="TakaoPGothic", fontsize=20, labelpad=30)
 avg_title = "平均値"
 med_title = "中央値"
 
-#plt.legend([avg, med], [avg_title, med_title], bbox_to_anchor=(1.0, 1.0), prop={"family":"TakaoPGothic"", 'size':20}, markerscale=1)
+plt.legend([avg, med], [avg_title, med_title], bbox_to_anchor=(1.0, 1.0), prop={"family":"TakaoPGothic", 'size':20}, markerscale=1)
 
 #画像保存
 plt.savefig(output_file, bbox_inches="tight", pad_inches=0.0)
