@@ -27,7 +27,7 @@ echo "$(date +%Y-%m-%d)_flag_videos_datasets_score.csv copies $bkup/datasets"
 cp $(date +%Y-%m-%d)_flag_videos_datasets_score.csv $bkup/datasets/.
 
 echo "flag_channel_statistics.png copies $bkup/datasets"
-cp flag_channel_statistics.png $bkup/graph/.
+cp flag_channel_statistics_graph.png $bkup/graph/.
 
 echo "flag_channel_statistics.csv copies $bkup/datasets"
 cp flag_channel_statistics.csv $bkup/datasets/.
