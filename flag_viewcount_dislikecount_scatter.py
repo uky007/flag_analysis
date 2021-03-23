@@ -105,7 +105,7 @@ line = P.polyval(y3,coef)
 approximate, = plt.plot(y3, line, color='k')
         
 # 軸の範囲
-plt.xlim([0, 5000])
+plt.xlim([0, 1500])
 plt.ylim([0, 4000000])
 
 # グラフタイトル
