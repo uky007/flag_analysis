@@ -35,4 +35,14 @@ cp flag_channel_statistics.csv $bkup/datasets/.
 echo "all thumbnail copy $bkup/thumbnail"
 cp -r --no-clobber thumbnail/* $bkup/thumbnail/
 
+echo "flag_viewCount_videoTime_scatter_graph.png copies $bkup/datasets"
+cp flag_viewCount_videoTime_scatter_graph.png $bkup/graph/.
+echo "flag_viewCount_likeCount_scatter_graph.png copies $bkup/datasets"
+cp flag_viewCount_likeCount_scatter_graph.png $bkup/graph/.
+echo "flag_viewCount_dislikeCount_scatter_graph.png copies $bkup/datasets"
+cp flag_viewCount_dislikeCount_scatter_graph.png $bkup/graph/.
+echo "flag_viewCount_commentCount_scatter_graph.png copies $bkup/datasets"
+cp flag_viewCount_commentCount_scatter_graph.png $bkup/graph/.
+
 cp flag.log $bkup/datasets/.
+
