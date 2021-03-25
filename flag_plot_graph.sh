@@ -16,3 +16,4 @@ python3 flag_viewcount_videotime_scatter.py ${input_file}
 python3 flag_viewcount_likecount_scatter.py ${input_file}
 python3 flag_viewcount_dislikecount_scatter.py ${input_file}
 python3 flag_viewcount_commentcount_scatter.py ${input_file}
+python3 flag_viewcount_likecount_dislikecount_bubble.py ${input_file}

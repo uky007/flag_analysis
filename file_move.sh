@@ -43,6 +43,8 @@ echo "flag_viewCount_dislikeCount_scatter_graph.png copies $bkup/datasets"
 cp flag_viewCount_dislikeCount_scatter_graph.png $bkup/graph/.
 echo "flag_viewCount_commentCount_scatter_graph.png copies $bkup/datasets"
 cp flag_viewCount_commentCount_scatter_graph.png $bkup/graph/.
+echo "flag_viewCount_likeCount_dislikeCount_bubble_graph.png copies $bkup/datasets"
+cp flag_viewCount_likeCount_dislikeCount_bubble_graph.png $bkup/graph/.
 
 cp flag.log $bkup/datasets/.
 
