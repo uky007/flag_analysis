@@ -91,7 +91,7 @@ ax1 = fig.add_subplot()
 
 # グラフプロット
 ## 再生回数と動画時間の散布図をプロット
-sc = plt.scatter(y2, y1, s=y3, c="r", alpha=0.5, linewidths=1, edgecolors="k")
+sc = plt.scatter(y2, y1, s=y3, c="b", alpha=0.5, linewidths=1, edgecolors="k")
 #plt.colorbar()
 
 
@@ -102,7 +102,7 @@ coef = P.polyfit(y2, y1, 1)
 
 line = P.polyval(y2,coef)
 
-approximate, = plt.plot(y2, line, color='k')
+#approximate, = plt.plot(y2, line, color='k')
         
 # 軸の範囲
 plt.xlim([0, 40000])
@@ -124,7 +124,7 @@ plt.ylabel("再生回数", fontname="TakaoPGothic", fontsize=10)
 sc_title = "低評価数"
 #approximate_title = "近似曲線"
 
-plt.legend([sc], [sc_title], bbox_to_anchor=(1.0, 1.0), prop={"family":"TakaoPGothic", 'size':10}, markerscale=1)
+plt.legend([sc], [sc_title], bbox_to_anchor=(1.0, 1.0), prop={"family":"TakaoPGothic", 'size':10}, markerscale=0.5)
 
 #画像保存
 plt.savefig("flag_viewCount_likeCount_dislikeCount_bubble_graph.png", bbox_inches="tight", pad_inches=0.0)
