@@ -119,8 +119,8 @@ ss2, = ax2.plot(x[251], y2[251], marker='*', markersize=20, color='b', linestyle
         
 # 軸の範囲
 ax1.set_xlim('2019-11-01', x[len(x) - 1])
-ax1.set_ylim([0, 3600000])
-ax2.set_ylim([0, 35000])
+ax1.set_ylim([0, 4000000])
+ax2.set_ylim([0, 40000])
 
 # max(like), avg(like)
 print("Sum of likeCount:" + str(sum(y2)))
@@ -130,6 +130,18 @@ print("Median likeCount:" + str(num_like.median(axis=0)))
 print("Max comment count:" + str(max(y4)))
 print("Average comment count:" + str(num_comment.mean(axis=0)))
 print("Median comment count:" + str(num_comment.median(axis=0)))
+
+# 分散
+print("Variance of viewCount: " + str(np.var(y1)))
+print("Variance of likeCount: " + str(np.var(y2)))
+print("Variance of dislikeCount: " + str(np.var(y3)))
+print("Variance of commentCount: " + str(np.var(y4)))
+
+# 標準偏差
+print("Std. variance of viewCount: " + str(np.std(y1)))
+print("Std. variance of likeCount: " + str(np.std(y2)))
+print("Std. variance of dislikeCount: " + str(np.std(y3)))
+print("Std. variance of commentCount: " + str(np.std(y4)))
 
 # グラフタイトル
 ax1.set_title("全力回避フラグちゃん! 再生回数と評価数", fontname="TakaoPGothic", fontsize=20)

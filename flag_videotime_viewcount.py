@@ -78,7 +78,7 @@ time, = ax2.plot(x, y9, color='r')
         
 # 軸の範囲
 ax1.set_xlim('2019-11-01', x[len(x)-1])
-ax1.set_ylim([0, 3600000])
+ax1.set_ylim([0, 4000000])
 ax2.set_ylim([0, '00:15:00'])
 
 # グラフタイトル
@@ -88,6 +88,13 @@ ax1.set_title("全力回避フラグちゃん! 再生回数と動画時間", fon
 ax1.tick_params(axis='x', labelsize=20, labelrotation=45)
 ax1.tick_params(axis='y', labelsize=20)
 ax2.tick_params(axis='y', labelsize=20)
+
+# 動画時間の合計
+sum = vt_seconds.sum()
+sum_h = int(sum / 3600)
+sum_m = int((sum % 3600) / 60)
+sum_s = int(sum % 60)
+print("Sum of videoTime: " + str(sum_h) + ":" + str(sum_m).zfill(2) + ":" + str(sum_s).zfill(2))
 
 #最大値，最小値
 max = vt_seconds.max()
@@ -99,12 +106,6 @@ min_m = int(min / 60)
 min_s = int(min % 60)
 print("Min of videoTime: " + str(min_m) + ":" + str(min_s).zfill(2))
 
-# 動画時間の合計
-sum = vt_seconds.sum()
-sum_h = int(sum / 3600)
-sum_m = int((sum % 3600) / 60)
-sum_s = int(sum % 60)
-print("Sum of videoTime: " + str(sum_h) + ":" + str(sum_m).zfill(2) + ":" + str(sum_s).zfill(2))
 
 ## 平均値と中央値を横線でプロット
 avg = ax2.hlines(vt_seconds.mean(axis=0), x[0], x[len(x)-1], 'b', linestyles='dashed')
@@ -115,6 +116,19 @@ med = ax2.hlines(vt_seconds.median(axis=0), x[0], x[len(x)-1], 'r', linestyles='
 med_m = int(vt_seconds.median(axis=0) / 60)
 med_s = int(vt_seconds.median(axis=0) % 60)
 print("Median of videoTime: " + str(med_m) + ":" + str(med_s).zfill(2))
+
+
+# 分散
+vt_var = np.var(y10)
+vt_var_m = int(vt_var / 60)
+vt_var_s = int(vt_var % 60)
+print("Variance of videotime: " + str(vt_var))
+
+# 標準偏差
+vt_stdvar = np.std(y10)
+vt_stdvar_m = int(vt_stdvar / 60)
+vt_stdvar_s = int(vt_stdvar % 60)
+print("Std. variance of videotime: " + str(vt_stdvar))
 
 # ラベル名
 ax1.set_xlabel("動画公開日", fontsize=20, fontname="TakaoPGothic")
