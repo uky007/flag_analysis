@@ -13,8 +13,8 @@ from matplotlib import rcParams
 from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 
-bins = 40
-maxy = 30
+bins = 25
+maxy = 60
 
 #データセット対象のCSV ファイル
 file = sys.argv[1]
@@ -71,12 +71,10 @@ plt.ylabel("動画数", fontname="TakaoPGothic", fontsize=20)
 avg = plt.vlines(num_play.mean(axis=0), 0, maxy, 'b', linestyles='dashed')
 med = plt.vlines(num_play.median(axis=0), 0, maxy, 'r', linestyles='dashed')
 
+binnedviewCount = pd.cut(y1, bins)
+print(binnedviewCount.value_counts())
+
 # 凡例
-#play_title = "再生回数"
-#dead_title = "Dead End"
-#shibou_title = "死亡フラグ"
-#seizon_title = "生存フラグ"
-#renai_title = "恋愛フラグ"
 avg_title = "平均値"
 med_title = "中央値"
 

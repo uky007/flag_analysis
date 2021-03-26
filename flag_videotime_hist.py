@@ -77,6 +77,10 @@ plt.title("全力回避フラグちゃん! 動画時間のヒストグラム", f
 avg = plt.vlines(vt_seconds.mean(axis=0), 0, maxy, 'b', linestyles='dashed')
 med = plt.vlines(vt_seconds.median(axis=0), 0, maxy, 'r', linestyles='dashed')
 
+
+binnedvideotime = pd.cut(y9, bins)
+print(binnedvideotime.value_counts())
+
 # ラベル名
 plt.xlabel("動画時間", fontsize=20, fontname="TakaoPGothic")
 plt.ylabel("動画数", fontname="TakaoPGothic", fontsize=20, labelpad=30)
