@@ -66,7 +66,7 @@ ax1.set_title("全力回避フラグちゃん! 総再生回数とチャンネル
 
 # 軸メモリ
 ax1.tick_params(axis='x', labelsize=20, labelrotation=45)
-ax1.xaxis.set_major_locator(mdates.DayLocator(bymonthday=None, interval=1, tz=None))
+ax1.xaxis.set_major_locator(mdates.DayLocator(bymonthday=None, interval=7, tz=None))
 ax1.tick_params(axis='y', labelsize=20)
 ax2.tick_params(axis='y', labelsize=20)
 

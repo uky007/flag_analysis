@@ -46,15 +46,15 @@ if res.status_code == 200:
         tweet_list = tweets["results"]
         
         for tweet in tweet_list:
-            created_at.append(tweet["created_at"]) #投稿日時
-            text.append(tweet["text"]) #投稿本文
-            retweet_count.append(tweet["retweet_count"]) #リツイート数
-            favorite_count.append(tweet["favorite_count"]) #いいね数
-            user = tweet["user"]
-            name.append(user["name"]) #名前
-            followers_count.append(user["followers_count"]) #フォロワー数
-            friends_count.append(user["friends_count"]) #フォロー数
-            statuses_count.append(user["statuses_count"]) #投稿数
+            #created_at.append(tweet["created_at"]) #投稿日時
+            #text.append(tweet["text"]) #投稿本文
+            #retweet_count.append(tweet["retweet_count"]) #リツイート数
+            #favorite_count.append(tweet["favorite_count"]) #いいね数
+            #user = tweet["user"]
+            #name.append(user["name"]) #名前
+            #followers_count.append(user["followers_count"]) #フォロワー数
+            #friends_count.append(user["friends_count"]) #フォロー数
+            #statuses_count.append(user["statuses_count"]) #投稿数
             result_json = json.dumps(tweet, ensure_ascii=False)
             print(result_json)
 

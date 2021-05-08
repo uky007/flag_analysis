@@ -44,7 +44,10 @@ for i in range(len(x)):
     try:
         dt = datetime.datetime.strptime(num_time[num_time.columns[1]][i], "PT%MM%SS")
     except ValueError:
-        dt = datetime.datetime.strptime(num_time[num_time.columns[1]][i], "PT%MM")
+        try:
+            dt = datetime.datetime.strptime(num_time[num_time.columns[1]][i], "PT%MM")
+        except ValueError:
+            dt = datetime.datetime.strptime(num_time[num_time.columns[1]][i], "PT%SS")
     
     y9.append(dt.time())
     sec = dt.minute * 60 + dt.second
@@ -78,7 +81,7 @@ avg = plt.vlines(vt_seconds.mean(axis=0), 0, maxy, 'b', linestyles='dashed')
 med = plt.vlines(vt_seconds.median(axis=0), 0, maxy, 'r', linestyles='dashed')
 
 
-binnedvideotime = pd.cut(y9, bins)
+binnedvideotime = pd.cut(y10, bins)
 print(binnedvideotime.value_counts())
 
 # ラベル名

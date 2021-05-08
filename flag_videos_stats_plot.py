@@ -92,7 +92,7 @@ print("Median of viewCount:" + str(num_play.median(axis=0)))
         
 # 軸の範囲
 plt.xlim('2019-11-01', x[len(x) - 1])
-plt.ylim([0, 3500000])
+plt.ylim([0, 4000000])
 
 # グラフタイトル
 plt.title("全力回避フラグちゃん! 動画集計データ", fontname="TakaoPGothic", fontsize=20)

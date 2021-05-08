@@ -42,15 +42,20 @@ y9 = []
 y10 = []
 
 #video time
+
 for i in range(len(x)):
     try:
         dt = datetime.datetime.strptime(num_time[num_time.columns[1]][i], "PT%MM%SS")
     except ValueError:
-        dt = datetime.datetime.strptime(num_time[num_time.columns[1]][i], "PT%MM")
+        try:
+            dt = datetime.datetime.strptime(num_time[num_time.columns[1]][i], "PT%MM")
+        except ValueError:
+            dt = datetime.datetime.strptime(num_time[num_time.columns[1]][i], "PT%SS")
     
     y9.append(dt.time())
     sec = dt.minute * 60 + dt.second
     y10.append(sec)
+
 
 vt_seconds = pd.Series(y10)
 res = y1.corr(vt_seconds)
