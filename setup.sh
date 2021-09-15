@@ -7,7 +7,7 @@ sudo apt install vim emacs nmap curl jq python3 python3-pip -y
 sudo apt install fonts-takao -y
 sudo atp install graphviz -y
 pip3 install update
-pip3 install numpy pandas matplotlib
+pip3 install numpy pandas matplotlib sklearn dtreeviz
 
 mkdir $path/data
 mkdir $path/graph
