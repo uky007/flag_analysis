@@ -6,6 +6,7 @@ sudo apt update -y
 sudo apt install vim emacs nmap curl jq python3 python3-pip -y
 sudo apt install fonts-takao -y
 sudo atp install graphviz -y
+sudo apt install librsvg2-bin 
 pip3 install update
 pip3 install numpy pandas matplotlib sklearn dtreeviz
 
