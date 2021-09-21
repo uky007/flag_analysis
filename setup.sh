@@ -3,6 +3,7 @@
 path=$(pwd)
 
 sudo apt update -y
+LANG=C xdg-user-dirs-gtk-update
 sudo apt install vim emacs nmap curl jq python3 python3-pip -y
 sudo apt install fonts-takao -y
 sudo atp install graphviz -y
